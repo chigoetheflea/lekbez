@@ -1,0 +1,33 @@
+.partners {
+  display: flex;
+  justify-content: center;
+}
+
+.partners__wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.partners__logotypes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.partners__logo {
+  max-width: 200px;
+  flex-grow: 1;
+
+  &[href] {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}

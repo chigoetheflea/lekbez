@@ -1,0 +1,34 @@
+.icon-link {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  svg {
+    .transition(svg);
+  }
+
+  &:hover,
+  &:focus {
+    .icon-link__text {
+      color: @red;
+    }
+
+    svg, svg path {
+      fill: @red !important;
+    }
+  }
+
+  &--reverse {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.icon-link__text {
+  .transition();
+
+  margin-left: 10px;
+  line-height: 1;
+  color: @blue;
+}

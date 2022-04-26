@@ -1,0 +1,50 @@
+.map {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  background-color: @lightblue;
+}
+
+.map__grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 30px 30px;
+  grid-template-areas:
+    "c3 c3 c3 c3 c3 c1 c1 c1 c1 c1 c1 c1"
+    "c3 c3 c3 c3 c3 c2 c2 c2 c2 c2 c2 c2"
+    "c4 c4 c4 c4 c4 c2 c2 c2 c2 c2 c2 c2"
+    "c5 c5 c5 c5 c6 c6 c6 c6 c7 c7 c7 c7";
+}
+
+.map__item {
+  &--news {
+    grid-area: c3;
+  }
+
+  &--forum {
+    grid-area: c1;
+  }
+
+  &--monitoring {
+    grid-area: c4;
+  }
+
+  &--events {
+    grid-area: c2;
+  }
+
+  &--experts {
+    grid-area: c5;
+  }
+
+  &--inits {
+    grid-area: c6;
+  }
+
+  &--proposal {
+    grid-area: c7;
+  }
+}
+
+

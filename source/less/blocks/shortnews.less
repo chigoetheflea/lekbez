@@ -1,0 +1,158 @@
+.shortnews {
+  position: relative;
+  color: #ffffff;
+  border-radius: 10px;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.shortnews__title-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px 30px 0 30px;
+
+  pointer-events: none;
+}
+
+.shortnews__title,
+.shortnews__all {
+  pointer-events: auto;
+}
+
+.shortnews__all {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    opacity: 0.8;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: #ffffff;
+    opacity: 0.6;
+  }
+}
+
+.shortnews__slider {
+  position: relative;
+  z-index: 5;
+  align-items: flex-end;
+
+  padding: 0;
+}
+
+.shortnews__slider-wrapper {
+  height: 100%;
+}
+
+.shortnews__slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 30px;
+  height: 100%;
+
+  color: #ffffff;
+}
+
+.shortnews__date {
+  margin-top: 100px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shortnews__slide-title {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.shortnews__excerpt {
+  margin: 15px 0 0 0;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.shortnews__link {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  margin-top: 30px;
+
+  color: #ffffff;
+
+  span {
+    margin-right: 7px;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  svg {
+    .transition(svg);
+
+    fill: #ffffff;
+  }
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    opacity: 0.8;
+
+    svg {
+      fill: #ffffff;
+    }
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.shortnews__thumb {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+
+  width: 100%;
+
+  transform: translate(-50%, -50%);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #000000;
+    opacity: 0.5;
+
+    content: '';
+  }
+}
+
+.shortnews__dots {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  z-index: 100;
+}

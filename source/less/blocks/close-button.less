@@ -1,0 +1,40 @@
+.close-button {
+  .transition();
+
+  display: flex;
+  justify-content: center;
+  padding: 0;
+
+  color: @red;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    .transition(svg);
+
+    fill: @red;
+  }
+
+  span {
+    margin-left: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    color: @lightred;
+
+    svg {
+      fill: @lightred;
+    }
+  }
+
+  &:active {
+    color: @darkred;
+
+    svg {
+      fill: @darkred;
+    }
+  }
+}

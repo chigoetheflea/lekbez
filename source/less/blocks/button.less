@@ -1,0 +1,25 @@
+.button {
+  .transition();
+  .border-blue();
+
+  display: inline-block;
+  padding: 12px 15px;
+
+  color: @blue;
+  line-height: 1;
+
+  background: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: @red;
+    border-color: @red;
+  }
+
+  &:active {
+    color: @darkred;
+    border-color: @darkred;
+  }
+}
