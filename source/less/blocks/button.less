@@ -3,7 +3,6 @@
   .border-blue();
 
   display: inline-block;
-  padding: 12px 15px;
 
   color: @blue;
   line-height: 1;
@@ -18,8 +17,22 @@
     border-color: @red;
   }
 
+  &:focus {
+    outline-offset: 3px;
+    outline: dotted 1px @blue;
+  }
+
   &:active {
     color: @darkred;
     border-color: @darkred;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &--regular {
+    padding: 12px 15px;
   }
 }

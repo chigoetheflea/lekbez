@@ -12,8 +12,23 @@
       top: auto;
       bottom: 100%;
       margin-top: 0;
-      margin-bottom: 5px;
+      margin-bottom: 2px;
       transform: translateY(-5px);
+    }
+  }
+
+  &--full {
+    height: 70px;
+
+    .like-select__button {
+      height: 70px;
+      padding: 0 30px;
+    }
+
+    .like-select__list{
+      a {
+        padding: 10px 30px;
+      }
     }
   }
 }
@@ -37,8 +52,12 @@
 
   &:hover,
   &:focus {
+    background-color: @lightblue;
+    color: @blue;
+    border-color: @blue;
+
     svg {
-      fill: @lightred;
+      fill: @blue;
     }
   }
 
@@ -57,8 +76,9 @@
   position: absolute;
   top: 100%;
   left: 0;
+  z-index: 100;
 
-  margin-top: 5px;
+  margin-top: 2px;
   width: 100%;
 
   background-color: #ffffff;

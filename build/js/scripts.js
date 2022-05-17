@@ -39,16 +39,22 @@ const LOADING_HIDDEN_CLASS = `loading--hidden`;
 const SCROLL_OFFSET = -50;
 
 const FORM = `.form`;
-const FORM_RESULT = `.form__result`;
+const FORM_VALIDATION = `.js-form`;
+const FORM_RESULT = `.js-result`;
 const FORM_INPUT = `.form__input`;
-const FORM_RESULT_ACTIVE_CLASS = `form__result--active`;
+const FORM_RESULT_ACTIVE_CLASS = `notification--active`;
+const FORM_RESULT_SUCCESS_CLASS = `notification--green`;
+const FORM_RESULT_ERROR_CLASS = `notification--red`;
 const FORM_ALERT_ERROR = `Ошибка отправки!`;
 const FORM_ALERT_SUCCESS = `Отправлено!`;
 const FORM_METHOD = `POST`;
-const FORM_SERVER_URL = (typeof phpHandler !== `undefined` ) ? phpHandler.url : `http://test9.fsfamily.ru/wp-content/themes/sdp/lib/mail_handler.php`;
+const FORM_SERVER_URL = ``;
 const FORM_FIELD_DEFAULT_VALUE = ``;
 const FORM_SUBMIT = `.js-submit`;
 const FORM_AGREE = `.js-agree`;
+const FORM_DATE = '.js-date-picker';
+const FORM_DATE_FORMAT = `F j, Y`;
+const FORM_MASK = `.js-masked-input`;
 
 const VALIDATE_FIELD = `[data-validate='true']`;
 const TEST_REQUERED = `required`;
@@ -64,6 +70,11 @@ const MAP_BALLOON_CONTENT = `SD & Partners`;
 const MAP_MARKER_PATH = `img/marker.svg`;
 
 const SLIDER_SLIDE_CLASS = `latest-slider__slide`;
+
+const MaskTemplates = {
+  phone: new Inputmask(`+7 (999) 999-99-99`),
+  email: new Inputmask({regex: '[a-zA-Z0-9]+@[a-zA-Z]+\.[a-z]+'}),
+};
 
 const SlidersSettings = {
   speed: 250,
@@ -134,7 +145,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
   const closeModal = (modal, button) => {
     switchModalClasses(modal, {active: MODAL_ACTIVE_CLASS, closed: MODAL_CLOSED_CLASS,});
 
-    button.removeEventListener(`click`, closeModal);
+    button.removeEventListener(`click`, onModalCloseClick);
   }
 
   const openModal = (button) => {
@@ -144,12 +155,14 @@ document.addEventListener(`DOMContentLoaded`, function() {
     if (target) {
       target.classList.add(MODAL_ACTIVE_CLASS);
 
-      modalClose.addEventListener(`click`, onModalCloseClick.bind(null, target));
+      modalClose.addEventListener(`click`, onModalCloseClick);
     }
   };
 
-  const onModalCloseClick = (modal, evt) => {
+  const onModalCloseClick = (evt) => {
     evt.preventDefault();
+
+    const modal = evt.target.closest(MODAL);
 
     closeModal(modal, evt.target);
   }
@@ -355,21 +368,36 @@ document.addEventListener(`DOMContentLoaded`, function() {
   const clearForm = (form) => {
     const fields = Array.from(form.querySelectorAll(FORM_INPUT));
     const resultField = form.querySelector(FORM_RESULT);
+    const agreeField = form.querySelector(FORM_AGREE);
+    const submitButton = form.querySelector(FORM_SUBMIT);
+    let fieldResetValue = FORM_FIELD_DEFAULT_VALUE;
 
     fields.map((field) => {
-      field.value = FORM_FIELD_DEFAULT_VALUE;
+      if (field.classList.contains(SELECT_INPUT)) {
+        const selectButton = field.parentNode.querySelector(SELECT_BUTTON);
+        const selectList = field.parentNode.querySelector(`.${SELECT_CURRENT_OPTION_CLASS}`);
+        const selectDefaultValue = selectButton.dataset.default;
 
-      changeLabelClass(field, true);
+        selectButton.querySelector(`span`).textContent = selectDefaultValue;
+        selectList.classList.remove(SELECT_CURRENT_OPTION_CLASS);
+
+        fieldResetValue = selectDefaultValue;
+      }
+
+      field.value = fieldResetValue;
     });
 
-    resultField.classList.remove(FORM_RESULT_ACTIVE_CLASS);
+    agreeField.checked = false;
+    submitButton.disabled = true;
+
+    resultField.classList.remove(FORM_RESULT_ACTIVE_CLASS, FORM_RESULT_SUCCESS_CLASS, FORM_RESULT_ERROR_CLASS);
   };
 
   const handleDataLoaded = (form) => {
     const resultField = form.querySelector(FORM_RESULT);
 
     resultField.textContent = FORM_ALERT_SUCCESS;
-    resultField.classList.add(FORM_RESULT_ACTIVE_CLASS);
+    resultField.classList.add(FORM_RESULT_ACTIVE_CLASS, FORM_RESULT_SUCCESS_CLASS);
 
     setTimeout(clearForm.bind(null, form), 2000);
   };
@@ -378,6 +406,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     const resultField = form.querySelector(FORM_RESULT);
 
     resultField.textContent = FORM_ALERT_ERROR;
+    resultField.classList.add(FORM_RESULT_ACTIVE_CLASS, FORM_RESULT_ERROR_CLASS);
   };
 
   const sendFormData = (form) => {
@@ -466,7 +495,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     checkForm(form);
   };
 
-  const form = document.querySelector(`.js-form`);
+  const form = document.querySelector(FORM_VALIDATION);
 
   if (form) {
     form.addEventListener(`submit`, handleFormSubmit.bind(null, form));
@@ -489,7 +518,13 @@ document.addEventListener(`DOMContentLoaded`, function() {
   if (form) {
     const formAgreeField = form.querySelector(FORM_AGREE);
 
-    formAgreeField.addEventListener(`click`, handleFormAgreeClick);
+    if (formAgreeField) {
+      formAgreeField.addEventListener(`click`, handleFormAgreeClick);
+    } else {
+      const formSubmit = document.querySelector(FORM_SUBMIT);
+
+      formSubmit.disabled = false;
+    }
   }
 
   /* form agree */
@@ -558,10 +593,20 @@ document.addEventListener(`DOMContentLoaded`, function() {
     selectButton.textContent = option.textContent;
   };
 
-  const onOptionClick = (select, evt) => {
+  const onOptionClick = (evt) => {
     evt.preventDefault();
 
+    const select = evt.target.closest(SELECT);
+
     chooseOption(select, evt.target);
+    toggleSelectList(select);
+  };
+
+  const openList = (select) => {
+    const list = select.querySelector(SELECT_LIST);
+
+    list.classList.add(SELECT_ACTIVE_CLASS);
+    list.addEventListener(`click`, x)
   };
 
   const toggleSelectList = (select) => {
@@ -571,7 +616,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     const isListOpen = list.classList.contains(SELECT_ACTIVE_CLASS);
 
     isListOpen
-      ? list.addEventListener(`click`, onOptionClick.bind(null, select))
+      ? list.addEventListener(`click`, onOptionClick)
       : list.removeEventListener(`click`, onOptionClick);
   };
 
@@ -590,5 +635,30 @@ document.addEventListener(`DOMContentLoaded`, function() {
   }
 
   /* form select */
+
+  /* date picker */
+
+  if (document.querySelectorAll(FORM_DATE).length) {
+    flatpickr(FORM_DATE, {
+      altFormat: FORM_DATE_FORMAT,
+      altInput: true,
+    });
+  }
+
+  /* date picker */
+
+  /* input masks */
+
+  const formMasks = Array.from(document.querySelectorAll(FORM_MASK));
+
+  if (formMasks) {
+    formMasks.map((formMask) => {
+      const maskType = formMask.dataset.mask;
+
+      MaskTemplates[maskType].mask(formMask);
+    });
+  }
+
+  /* input masks */
 
 });
