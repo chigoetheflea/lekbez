@@ -1,0 +1,57 @@
+.doc-small {
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+  margin-top: 15px;
+
+  background-color: @lightblue;
+  border-radius: 10px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.doc-small__title {
+  font-weight: 500;
+
+  a {
+    color: @blue;
+
+    &:hover,
+    &:focus {
+      color: @red;
+    }
+
+    &:active {
+      color: @darkred;
+    }
+  }
+}
+
+.doc-small__tags {
+  margin-top: 30px;
+}
+
+.doc-small__meta {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.doc-small__date,
+.doc-small__changed {
+  margin: 0;
+}
+
+.doc-small__changed {
+  margin-left: 30px;
+}
+
+.doc-small__edit {
+  margin-left: auto;
+  text-decoration: underline;
+}

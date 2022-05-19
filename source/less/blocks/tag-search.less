@@ -1,0 +1,42 @@
+.tag-search {
+  display: flex;
+  flex-direction: column;
+}
+
+.tag-search__wrapper {
+  position: relative;
+}
+
+.tag-search__button {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+
+  background: none;
+  border: none;
+
+  transform: translateY(-45%);
+
+  svg {
+    .transition(svg);
+
+    fill: @blue;
+  }
+
+  &:focus,
+  &:hover {
+    svg {
+      fill: @red;
+    }
+  }
+
+  &:active {
+    svg {
+      fill: @darkred;
+    }
+  }
+}
+
+.tag-search__input {
+  padding-right: 80px;
+}

@@ -1,0 +1,40 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.tags__title {
+  margin: 0;
+  font-weight: 700;
+}
+
+.tags__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 15px;
+
+  a {
+    padding: 1px 8px;
+    margin: 5px;
+    border: 1px solid @blue;
+    color: @blue;
+    border-radius: 10px;
+
+    &[href] {
+      &:hover,
+      &:focus {
+        color: @red;
+        border-color: @red;
+      }
+
+      &:active {
+        color: @darkred;
+        border-color: @darkred;
+      }
+    }
+  }
+}

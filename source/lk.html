@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Montserrat-ExtraBold.woff2" as="font">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <meta property="og:description" content="Лекарственная безопасность">
+  <meta property="og:image" content="img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Лекарственная безопасность">
+  <meta name="twitter:description" content="Лекарственная безопасность">
+  <meta name="twitter:image:src" content="img/og.jpg">
+  <meta name="description" content="Лекарственная безопасность">
+  <meta name="keywords" content="Лекарственная безопасность">
+  <title>Лекарственная безопасность</title>
+</head>
+<body class="no-js  site  site--inner">
+
+  <div style="display:none;">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+  <div class="loading  js-loading"><span class="loading__spinner"></span></div>
+
+  <header class="header  site__header">
+    <div class="main-menu  header__menu  js-menu">
+      <div class="main-menu__wrapper">
+        <button class="close-button  main-menu__close  js-menu-close">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_close"></use>
+          </svg>
+
+          <span>Закрыть</span>
+        </button>
+
+        <nav class="main-menu__navigation">
+          <div class="main-menu__user-controls">
+            <a href="" class="button  button--regular">Вход</a>
+
+            <a href="" class="button  button--regular">Регистрация</a>
+          </div>
+
+          <ul class="main-menu__list">
+            <li><a href="">РГ – Лекарственная безопасность</a></li>
+            <li><a href="">Форум</a></li>
+            <li><a href="">Общественные инициативы</a></li>
+            <li><a href="">Предложения</a>
+              <ul class="main-menu__list  main-menu__list--inner">
+                <li><a href="">РГ – Лекарственная безопасность</a></li>
+                <li><a href="">Форум</a></li>
+              </ul>
+            </li>
+            <li><a href="">Экспертный состав</a></li>
+            <li><a href="">Мониторинг</a></li>
+            <li><a href="">События и спецпроекты</a></li>
+            <li><a href="">Новости</a></li>
+            <li><a href="">Сми о нас</a></li>
+            <li><a href="">Контакты</a></li>
+          </ul>
+
+          <a href="" class="main-menu__subscribe">Подписаться на рассылку</a>
+
+          <form action="" class="form  main-menu__langs  js-menu-lang-form">
+            <p class="form__label  main-menu__langs-label">Выберите язык</p>
+
+            <div class="like-select  form__like-select  like-select--above  js-select">
+              <button class="button  like-select__button  button--regular  js-select-button" data-default="Русский">
+                <span>Русский</span>
+
+                <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon_arrow_thin_circle"></use>
+                </svg>
+              </button>
+
+              <ul class="like-select__list  js-select-list">
+                <li><a href="" class="like-select__current">Русский</a></li>
+                <li><a href="">Английский</a></li>
+              </ul>
+
+              <input type="text" name="current_lang" id="current_lang_field" class="visually-hidden  js-select-input" value="Русский">
+            </div>
+          </form>
+        </nav>
+      </div>
+    </div>
+
+    <div class="box  header__wrapper">
+      <div class="header__controls">
+        <button class="menu-button  header__menu-button  js-menu-button">
+          <div class="menu-button__burger"></div>
+
+          <span class="menu-button__text">Меню</span>
+        </button>
+
+        <a href="/search.html" class="header__search-button  js-modal-button" data-target="#modal_search">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_search"></use>
+          </svg>
+        </a>
+      </div>
+
+      <a href="" class="header__logo  img-link">
+        <img src="./img/logo_lekbez_color.svg" alt="Лекарственная безопасность" width="204" height="60">
+      </a>
+
+      <div class="header__user-links">
+        <a href="" class="icon-link  header__user-links-item">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_arrow"></use>
+          </svg>
+
+          <span class="icon-link__text">Вход</span>
+        </a>
+
+        <a href="" class="icon-link  header__user-links-item">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_plus"></use>
+          </svg>
+
+          <span class="icon-link__text">Регистрация</span>
+        </a>
+
+        <!---
+        <a href="" class="icon-link  header__user-links-item">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_user"></use>
+          </svg>
+
+          <span class="icon-link__text">Личный кабинет</span>
+        </a>
+
+        <a href="" class="icon-link  header__user-links-item  icon-link--reverse">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_arrow"></use>
+          </svg>
+
+          <span class="icon-link__text">Выход</span>
+        </a>
+        --->
+
+      </div>
+    </div>
+  </header>
+
+  <main class="site-content  site__content">
+    <div class="breadcrumbs">
+      <div class="box  breadcrumbs__wrapper">
+        <a href="" class="breadcrumbs__link">Главная</a>
+
+        <span class="breadcrumbs__separator">/</span>
+
+        <span class="breadcrumbs__current">Личный кабинет эксперта</span>
+      </div>
+    </div>
+
+    <section class="account  content">
+      <div class="box  columns-wrapper  content__wrapper  box--wide">
+        <h1 class="title  content__title  title--big  title--center">Личный кабинет эксперта</h1>
+
+        <aside class="column  sidebar  content__sidebar  column--1-4">
+          <div class="controls  account__controls">
+            <a href="" class="button  controls__button  controls__button--current">
+              <div class="controls__icon">
+                <svg width="40px" height="40px" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon_big_hand_black"></use>
+                </svg>
+              </div>
+
+              <div class="controls__text">
+                <h2 class="controls__title">Общественные инициативы</h2>
+              </div>
+
+              <svg width="20px" height="20px" aria-hidden="true" focusable="false" class="controls__arrow">
+                <use xlink:href="#icon_arrow_thin_circle"></use>
+              </svg>
+            </a>
+
+            <a href="" class="button  controls__button">
+              <div class="controls__icon">
+                <svg width="40px" height="40px" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon_big_box_black"></use>
+                </svg>
+              </div>
+
+              <div class="controls__text">
+                <h2 class="controls__title">Предложения</h2>
+              </div>
+
+              <svg width="20px" height="20px" aria-hidden="true" focusable="false" class="controls__arrow">
+                <use xlink:href="#icon_arrow_thin_circle"></use>
+              </svg>
+            </a>
+
+            <a href="" class="button  controls__button">
+              <div class="controls__icon">
+                <svg width="40px" height="40px" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon_big_settings_black"></use>
+                </svg>
+              </div>
+
+              <div class="controls__text">
+                <h2 class="controls__title">Настройки</h2>
+              </div>
+
+              <svg width="20px" height="20px" aria-hidden="true" focusable="false" class="controls__arrow">
+                <use xlink:href="#icon_arrow_thin_circle"></use>
+              </svg>
+            </a>
+          </div>
+
+          <form action="" class="form  tag-search  sidebar__tag-search">
+            <label for="tag_search_field" class="form__label  tag-search__label">Поиск по меткам</label>
+
+            <div class="tag-search__wrapper">
+              <input type="text" class="form__input  tag-search__input" name="tag_search" id="tag_search_field" placeholder="Метка">
+
+              <button type="submit" class="button  tag-search__button">
+                <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon_search"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </aside>
+
+        <div class="column  content__column  column--3-4  column--vertical">
+          <section class="add-doc  js-add-doc">
+            <button class="button  add-doc__button  button--big  js-add-doc-open">
+              <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+                <use xlink:href="#icon_plus"></use>
+              </svg>
+
+              <span>Добавить документ</span>
+            </button>
+
+            <div class="add-doc__wrapper">
+              <button class="close-button  add-doc__close  js-add-doc-close">
+                <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon_close"></use>
+                </svg>
+
+                <span>Закрыть</span>
+              </button>
+
+              <form action="" class="form  add-doc__form  js-form" id="add_doc_form">
+                <div class="form__row">
+                  <label for="doc_title_field" class="form__label">Название документа</label>
+
+                  <input type="text" class="form__input" placeholder="Название документа" name="doc_title" id="doc_title_field" data-validate="true" data-required="true">
+                </div>
+
+                <div class="form__row">
+                  <label for="doc_tags_field" class="form__label">Метки (от 1 до 3), разделитель – запятая</label>
+
+                  <input type="text" class="form__input" placeholder="Метки" name="doc_tags" id="doc_tags_field" data-validate="true" data-required="true" data-tags="true">
+                </div>
+
+                <div class="form__row">
+                  <label for="doc_description_field" class="form__label">Описание документа</label>
+
+                  <textarea type="text" class="form__input  form__input--high" placeholder="Описание документа" name="doc_description" id="doc_description_field" data-validate="true" data-required="true"></textarea>
+                </div>
+
+                <div class="form__row">
+                  <label for="doc_file_field" class="add-file  form__label  js-file">
+                    <p class="add-file__label">Файл документа</p>
+
+                    <input type="file" name="doc_file[]" id="doc_file_field" multiple="multiple" name="MAX_FILE_SIZE" value="50000" accept=".doc,.docx,.pdf,.xls,.pptx" class="form__input  add-file__input  visually-hidden  js-file-input" data-validate="true" data-required="true">
+
+                    <div class="add-file__field  js-file-field">
+                      <mark data-default="*.docx, *.pdf, *.xls" class="add-file__mark  js-file-mark">*.docx, *.pdf, *.xls</mark>
+
+                      <span class="button  add-file__button  js-file-button">Прикрепить</span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="form__row">
+                  <label class="checkbox  form__checkbox  form__checkbox--margin">
+                    <input type="checkbox" class="checkbox__input  visually-hidden  js-agree">
+
+                    <span class="checkbox__text">Я ознакомлен(а) с <a href="">пользовательским соглашением</a> и даю согласие на обработку моих персональных данных</span>
+                  </label>
+                </div>
+
+                <div class="form__row  form__row--nomargin">
+                  <button type="submit" class="button  form__submit  button--regular  js-submit" disabled>Отправить</button>
+                </div>
+
+                <div class="form__row">
+                  <div class="notification  form__result  js-result">
+                    Документ добавлен
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="docs-list">
+            <h2 class="visually-hidden">Список документов</h2>
+
+            <article class="doc-small">
+              <h3 class="title  doc-small__title  title--regular">
+                <a href="">
+                  Умысел установлен обычаями делового оборота. Товарный кредит лицензирует дееспособный гарант
+                </a>
+              </h3>
+
+              <div class="tags  doc-small__tags">
+                <p class="tags__title">Метки</p>
+
+                <div class="tags__list">
+                  <a class="">Оборот</a>
+
+                  <a class="">Оборот</a>
+                </div>
+              </div>
+
+              <div class="doc-small__meta">
+                <p class="doc-small__date">
+                  <strong>Добавлен:&nbsp;</strong>
+
+                  <time datetime="">23 марта 2022, 15:42</time>
+                </p>
+
+                <p class="doc-small__changed">
+                  <strong>Изменен:&nbsp;</strong>
+
+                  <time datetime="">23 марта 2022, 15:42</time>
+                </p>
+
+                <a href="" class="doc-small__edit">Редактировать</a>
+              </div>
+            </article>
+
+            <article class="doc-small">
+              <h3 class="title  doc-small__title  title--regular">
+                <a href="">
+                  Умысел установлен обычаями делового оборота. Товарный кредит лицензирует дееспособный гарант
+                </a>
+              </h3>
+
+              <div class="tags  doc-small__tags">
+                <p class="tags__title">Метки</p>
+
+                <div class="tags__list">
+                  <a class="">Оборот</a>
+
+                  <a class="">Оборот</a>
+                </div>
+              </div>
+
+              <div class="doc-small__meta">
+                <p class="doc-small__date">
+                  <strong>Добавлен:&nbsp;</strong>
+
+                  <time datetime="">23 марта 2022, 15:42</time>
+                </p>
+
+                <p class="doc-small__changed">
+                  <strong>Изменен:&nbsp;</strong>
+
+                  <time datetime="">23 марта 2022, 15:42</time>
+                </p>
+
+                <a href="" class="doc-small__edit">Редактировать</a>
+              </div>
+            </article>
+
+            <article class="doc-small">
+              <h3 class="title  doc-small__title  title--regular">
+                <a href="">
+                  Умысел установлен обычаями делового оборота. Товарный кредит лицензирует дееспособный гарант
+                </a>
+              </h3>
+
+              <div class="tags  doc-small__tags">
+                <p class="tags__title">Метки</p>
+
+                <div class="tags__list">
+                  <a class="">Оборот</a>
+
+                  <a class="">Оборот</a>
+                </div>
+              </div>
+
+              <div class="doc-small__meta">
+                <p class="doc-small__date">
+                  <strong>Добавлен:&nbsp;</strong>
+
+                  <time datetime="">23 марта 2022, 15:42</time>
+                </p>
+
+                <p class="doc-small__changed">
+                  <strong>Изменен:&nbsp;</strong>
+
+                  <time datetime="">23 марта 2022, 15:42</time>
+                </p>
+
+                <a href="" class="doc-small__edit">Редактировать</a>
+              </div>
+            </article>
+
+            <article class="doc-small">
+              <h3 class="title  doc-small__title  title--regular">
+                <a href="">
+                  Умысел установлен обычаями делового оборота. Товарный кредит лицензирует дееспособный гарант
+                </a>
+              </h3>
+
+              <div class="tags  doc-small__tags">
+                <p class="tags__title">Метки</p>
+
+                <div class="tags__list">
+                  <a class="">Оборот</a>
+
+                  <a class="">Оборот</a>
+                </div>
+              </div>
+
+              <div class="doc-small__meta">
+                <p class="doc-small__date">
+                  <strong>Добавлен:&nbsp;</strong>
+
+                  <time datetime="">23 марта 2022, 15:42</time>
+                </p>
+
+                <p class="doc-small__changed">
+                  <strong>Изменен:&nbsp;</strong>
+
+                  <time datetime="">23 марта 2022, 15:42</time>
+                </p>
+
+                <a href="" class="doc-small__edit">Редактировать</a>
+              </div>
+            </article>
+          </section>
+
+          <section class="pagination  content__pagination">
+            <h2 class="visually-hidden">Навигация по страницам списка документов</h2>
+
+            <div class="pagination__wrapper">
+              <a href="" class="pagination__prev">
+                <svg width="28px" height="20px" aria-hidden="true" focusable="false" class="pagination__icon  pagination__icon--reverse">
+                  <use xlink:href="#icon_arrow_thin"></use>
+                </svg>
+              </a>
+
+              <div class="pagination__links">
+                <a class="pagination__current">01</a>
+                <a href="">02</a>
+                <a href="">03</a>
+                <a href="">04</a>
+              </div>
+
+              <a href="" class="pagination__next">
+                <svg width="28px" height="20px" aria-hidden="true" focusable="false" class="pagination__icon">
+                  <use xlink:href="#icon_arrow_thin"></use>
+                </svg>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer  site__footer">
+    <div class="box  footer__wrapper  columns-wrapper  box--wide">
+      <div class="column  footer__column  column--1-3  footer__column--left">
+        <p class="footer__column-title">Главное</p>
+
+        <nav class="footer__menu">
+          <ul>
+            <li><a href="">РГ – Лекарственная безопасность</a></li>
+            <li><a href="">Форум</a></li>
+            <li><a href="">Общественные инициативы</a></li>
+            <li><a href="">Предложения</a></li>
+            <li><a href="">Экспертный состав</a></li>
+            <li><a href="">Мониторинг</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column  footer__column  column--1-3  footer__column--center">
+        <p class="footer__column-title">Лекбез</p>
+
+        <nav class="footer__menu">
+          <ul>
+            <li><a href="">События и спецпроекты</a></li>
+            <li><a href="">Новости</a></li>
+            <li><a href="">Сми о нас</a></li>
+            <li><a href="">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column  footer__column  column--1-3  footer__column--right">
+        <a href="" class="footer__logo  img-link">
+          <img src="./img/logo_lekbez_white.svg" alt="Лекарственная безопасность" width="204" height="60">
+        </a>
+
+        <div class="footer__subscribe">
+          <form action="" class="form  footer__form" id="subscribe_form">
+            <label for="" class="form__label  footer__label" >Подпишитесь на рассылку</label>
+
+            <input type="email" class="form__input  form__input--small" name="subscribe_email" id="subscribe_email_field" placeholder="email@domain.ru">
+
+            <button type="submit" aria-label="Отправить" class="form__small-submit">
+              <svg width="16px" height="16px" aria-hidden="true" focusable="false">
+                <use xlink:href="#icon_arrow_thin"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      2022 © ЛекБез
+    </div>
+  </footer>
+
+  <section class="modal  js-modal" id="modal_search">
+    <button class="close-button  modal__close  js-modal-close">
+      <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+        <use xlink:href="#icon_close"></use>
+      </svg>
+
+      <span>Закрыть</span>
+    </button>
+
+    <div class="modal__body  modal__body--center">
+      <h2 class="title  modal__title">
+        Поиск по сайту
+      </h2>
+
+      <div class="modal__content">
+        <form action="" class="form  modal__form  js-search-form">
+          <input type="text" class="form__input" name="search" id="search_field" placeholder="Что вы хотите найти?">
+
+          <button type="submit" class="button  form__submit  button--regular">Найти!</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/peppermint.min.js"></script>
+  <script src="js/flatpickr.min.js"></script>
+  <script src="js/inputmask.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+</body>
+</html>

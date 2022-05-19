@@ -1,0 +1,70 @@
+.pagination__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px;
+
+  a {
+    margin: 0 10px;
+    font-size: 24px;
+    line-height: 28px;
+    color: @blue;
+    opacity: 0.35;
+
+    &.pagination__current {
+      opacity: 1;
+    }
+
+    &[href] {
+      &:hover,
+      &:focus {
+        color: @red;
+        opacity: 1;
+      }
+
+      &:active {
+        color: @darkred;
+      }
+    }
+  }
+}
+
+.pagination__next,
+.pagination__prev {
+  display: flex;
+  align-items: center;
+
+  svg {
+    .transition(svg);
+
+    fill: @blue;
+    opacity: 0.5;
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      fill: @red;
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    svg {
+      fill: @darkred;
+    }
+  }
+}
+
+.pagination__icon {
+  &--reverse {
+    transform: rotate(180deg);
+  }
+}

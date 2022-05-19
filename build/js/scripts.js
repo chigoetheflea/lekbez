@@ -23,7 +23,7 @@ const MODAL_CLOSED_CLASS = `modal--closed`;
 const SELECT = `.js-select`;
 const SELECT_BUTTON = `.js-select-button`;
 const SELECT_LIST = `.js-select-list`;
-const SELECT_INPUT = `.js-select-input`;
+const SELECT_INPUT = `js-select-input`;
 const SELECT_ACTIVE_CLASS = `like-select__list--active`;
 const SELECT_CURRENT_OPTION_CLASS = `like-select__current`;
 
@@ -56,20 +56,25 @@ const FORM_DATE = '.js-date-picker';
 const FORM_DATE_FORMAT = `F j, Y`;
 const FORM_MASK = `.js-masked-input`;
 
+const FILE = `.js-file`;
+const FILE_FIELD = `.js-file-field`;
+const FILE_MARK = `.js-file-mark`;
+const FILE_INPUT = `js-file-input`;
+
 const VALIDATE_FIELD = `[data-validate='true']`;
-const TEST_REQUERED = `required`;
-const TEST_PHONE = `phone`;
-const TEST_EMAIL = `email`;
-const TEST_VALIDATE = `validate`;
 const VALIDATE_TRUE_CLASS = `form__input--success`;
 const VALIDATE_FALSE_CLASS = `form__input--error`;
 
-const MAP = `#map`;
-const MAP_HINT = `SD & Partners`;
-const MAP_BALLOON_CONTENT = `SD & Partners`;
-const MAP_MARKER_PATH = `img/marker.svg`;
-
 const SLIDER_SLIDE_CLASS = `latest-slider__slide`;
+
+const TAG_SEPARATOR = `,`;
+
+const Test = {
+  REQUIRED: `required`,
+  PHONE: `phone`,
+  EMAIL: `email`,
+  TAGS: `tags`,
+};
 
 const MaskTemplates = {
   phone: new Inputmask(`+7 (999) 999-99-99`),
@@ -320,49 +325,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
   /* sliders */
 
-  /* map */
-
-  // const MARKER_MOBILE_SIZE = {
-  //   width: 60,
-  //   height: 96,
-  // };
-
-  // const defaultCoords = [55.765022, 37.598762];
-  // const coords = (typeof mapMarker !== `undefined`) ? (mapMarker.coords).replace(` `, ``).split(`,`) : defaultCoords;
-  // const markerUrl = (typeof mapMarker !== `undefined`) ? mapMarker.url : MAP_MARKER_PATH;
-  // console.log(coords);
-  // const currentMarkerSize = MARKER_MOBILE_SIZE;
-
-  // const mapContainer = document.querySelector(MAP);
-
-  // if (mapContainer) {
-  //   ymaps.ready(function () {
-  //     const mZoom = 17;
-  //     const map = new ymaps.Map(`map`, {
-  //         center: coords,
-  //         zoom: mZoom,
-  //       }, {
-  //         searchControlProvider: `yandex#search`,
-  //       }
-  //     ),
-  //     marker = new ymaps.Placemark(coords, {
-  //         hintContent: MAP_HINT,
-  //         balloonContent: MAP_BALLOON_CONTENT,
-  //       }, {
-  //         iconLayout: `default#image`,
-  //         iconImageHref: markerUrl,
-  //         iconImageSize: [currentMarkerSize.width, currentMarkerSize.height],
-  //         iconImageOffset: [-1 * currentMarkerSize.width / 2, -1 * currentMarkerSize.height ],
-  //       }
-  //     );
-
-  //     map.behaviors.disable(`scrollZoom`);
-  //     map.geoObjects.add(marker);
-  //   });
-  // }
-
-  /* map */
-
   /* __ form sending */
 
   const clearForm = (form) => {
@@ -373,6 +335,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     let fieldResetValue = FORM_FIELD_DEFAULT_VALUE;
 
     fields.map((field) => {
+      console.log(field);
       if (field.classList.contains(SELECT_INPUT)) {
         const selectButton = field.parentNode.querySelector(SELECT_BUTTON);
         const selectList = field.parentNode.querySelector(`.${SELECT_CURRENT_OPTION_CLASS}`);
@@ -382,6 +345,13 @@ document.addEventListener(`DOMContentLoaded`, function() {
         selectList.classList.remove(SELECT_CURRENT_OPTION_CLASS);
 
         fieldResetValue = selectDefaultValue;
+      }
+
+      if (field.classList.contains(FILE_INPUT)) {
+        field.files = null;
+
+        const fileUpload = field.parentNode.querySelector(FILE_MARK);
+        fileUpload.textContent = fileUpload.dataset.default;
       }
 
       field.value = fieldResetValue;
@@ -440,6 +410,12 @@ document.addEventListener(`DOMContentLoaded`, function() {
     return emailRegExp.test(valueToTest);
   };
 
+  const testTags = (valueToTest) => {
+    const tags = valueToTest.replace(/\s+/, ``).split(TAG_SEPARATOR);
+
+    return tags.length <= 3;
+  };
+
   const checkField = (field) => {
     const tests = Object.keys(field.dataset);
     const fieldValue = field.value;
@@ -448,17 +424,20 @@ document.addEventListener(`DOMContentLoaded`, function() {
       let singleTestResult = true;
 
       switch (test) {
-        case TEST_REQUERED:
+        case Test.REQUIRED:
           singleTestResult = testRequired(fieldValue);
           break;
 
-        case TEST_PHONE:
+        case Test.PHONE:
           singleTestResult = testPhone(fieldValue);
           break;
 
-        case TEST_EMAIL:
+        case Test.EMAIL:
           singleTestResult = testEmail(fieldValue);
           break;
+
+        case Test.TAGS:
+          singleTestResult = testTags(fieldValue);
       }
 
       return singleTestResult;
@@ -582,7 +561,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
   const chooseOption = (select, option) => {
     const currentOption = select.querySelector(`.${SELECT_CURRENT_OPTION_CLASS}`);
     const selectButton = select.querySelector(`${SELECT_BUTTON}>span`);
-    const selectInput = select.querySelector(SELECT_INPUT);
+    const selectInput = select.querySelector(`.${SELECT_INPUT}`);
 
     if (currentOption) {
       currentOption.classList.remove(SELECT_CURRENT_OPTION_CLASS);
@@ -600,13 +579,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
     chooseOption(select, evt.target);
     toggleSelectList(select);
-  };
-
-  const openList = (select) => {
-    const list = select.querySelector(SELECT_LIST);
-
-    list.classList.add(SELECT_ACTIVE_CLASS);
-    list.addEventListener(`click`, x)
   };
 
   const toggleSelectList = (select) => {
@@ -661,4 +633,62 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
   /* input masks */
 
+  /* form file */
+
+  const fileUploads = Array.from(document.querySelectorAll(FILE));
+  const fileApi = window.File && window.FileReader && window.FileList && window.Blob;
+
+  const addFile = (fileInput) => {
+    const fileUpload = fileInput.parentNode.querySelector(FILE_FIELD);
+    const fileLabel = fileUpload.querySelector(FILE_MARK);
+    let fileName = ``;
+
+    if (fileApi && fileInput.files[0]) {
+      fileName = fileInput.files[0].name;
+    } else {
+      fileName = fileInput.value;
+    }
+
+    if (!fileName.length) {
+      return;
+    }
+
+    fileLabel.textContent = fileName;
+  };
+
+  const handleFileChange = (evt) => {
+    addFile(evt.target);
+  };
+
+  if (fileUploads) {
+    fileUploads.map((file) => {
+      const fileInput = file.querySelector(`.${FILE_INPUT}`);
+
+      fileInput.addEventListener(`change`, handleFileChange);
+    });
+  }
+
+  /* form file */
+
+  /* add file form */
+
+  const addFileWrapper = document.querySelector(`.js-add-doc`);
+
+  const toggleAddFileWrapper = () => {
+    addFileWrapper.classList.toggle(`add-doc--active`);
+  };
+
+  const handleAddFileButtonClick = () => {
+    toggleAddFileWrapper();
+  };
+
+  if (addFileWrapper) {
+    const addFileButton = addFileWrapper.querySelector(`.js-add-doc-open`);
+    const addFileButtonClose = addFileWrapper.querySelector(`.js-add-doc-close`);
+
+    addFileButton.addEventListener(`click`, handleAddFileButtonClick);
+    addFileButtonClose.addEventListener(`click`, handleAddFileButtonClick);
+  }
+
+  /* add file form */
 });

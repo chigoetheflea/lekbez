@@ -1,0 +1,52 @@
+.add-file {
+  margin: 0;
+}
+
+.add-file__field {
+  display: flex;
+  height: 70px;
+  margin-top: 10px;
+
+  border: 1px solid @blue;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.form__input--error + .add-file__field {
+  border-color: @red;
+
+  .add-file__mark {
+    color: @red;
+  }
+}
+
+.add-file__label {
+  margin: 0 0 0 30px;
+}
+
+.add-file__button {
+  display: flex;
+  align-items: center;
+
+  padding-left: 30px;
+  padding-right: 30px;
+
+  border: none;
+  border-left: 1px solid @blue;
+  border-radius: 0;
+
+  &:hover,
+  &:focus {
+    border-color: @blue;
+  }
+}
+
+.add-file__mark {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0 30px;
+
+  color: @blue;
+  background: none;
+}
