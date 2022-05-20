@@ -1,0 +1,39 @@
+.page404__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+}
+
+.page404__title {
+  position: relative;
+  margin: 150px 0;
+
+  font-size: 36px;
+  line-height: 1;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    font-size: 298px;
+    line-height: 1;
+    color: @blue;
+
+    opacity: 0.1;
+    transform: translate(-50%, -50%);
+
+    content: "404";
+  }
+}
+
+.page404__links {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+}

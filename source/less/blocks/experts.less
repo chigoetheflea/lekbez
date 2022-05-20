@@ -1,0 +1,25 @@
+.experts__links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.experts__category-link {
+  &--active {
+    color: #ffffff;
+    background-color: @blue;
+    cursor: default;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #ffffff;
+      border-color: @blue;
+    }
+  }
+}
+
+.experts__item-wrapper {
+  margin-top: 75px;
+}

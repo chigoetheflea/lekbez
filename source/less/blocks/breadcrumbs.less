@@ -11,7 +11,8 @@
 }
 
 .breadcrumbs__wrapper {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .breadcrumbs__link {
@@ -27,4 +28,17 @@
   &:active {
     color: @darkblue;
   }
+}
+
+.breadcrumbs__link,
+.breadcrumbs__current {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+
+.breadcrumbs__separator {
+  margin: 0 5px;
 }
