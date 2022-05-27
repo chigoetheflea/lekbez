@@ -191,7 +191,55 @@
   }
 }
 
-
 .form__result {
   margin-top: 30px;
+}
+
+@media (max-width: @break-point-3) {
+  .form__row {
+    &--cells {
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+  }
+
+  .form__cell {
+    &--1-2,
+    &--1-3 {
+      width: 100%;
+    }
+  }
+
+  .form__title {
+    &--in-cell {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .form__input {
+    padding: 0 20px;
+
+    &--high {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+
+  .form__label {
+    margin: 0 0 10px 20px;
+  }
+
+  .form__checkbox {
+    &--margin {
+      margin-left: 0;
+    }
+  }
+
+  .form__row {
+    &--frame {
+      padding: 20px;
+    }
+  }
 }

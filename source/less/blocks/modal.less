@@ -60,3 +60,30 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media (max-width: @break-point-tablet) {
+  .modal__close {
+    right: 30px;
+  }
+
+  .modal__body {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .modal__content {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .modal__close {
+    right: 15px;
+    top: 15px;
+  }
+
+  .modal__body {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}

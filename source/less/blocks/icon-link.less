@@ -39,6 +39,16 @@
   .transition();
 
   margin-left: 10px;
-  line-height: 1;
+  line-height: 1.2;
   color: @blue;
+}
+
+.icon-link__separator {
+  display: none;
+}
+
+@media (max-width: @break-point-3) {
+  .icon-link__separator {
+    display: inline;
+  }
 }

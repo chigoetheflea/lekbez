@@ -1,5 +1,6 @@
 .expert__img-wrapper {
   justify-content: center;
+  width: 33.33%;
 }
 
 .expert__img {
@@ -10,6 +11,10 @@
 
   overflow: hidden;
   border-radius: 50%;
+}
+
+.expert__info-wrapper {
+  flex-direction: column;
 }
 
 .expert__job {
@@ -33,4 +38,36 @@
 .expert__bio {
   margin-top: 50px;
   color: #000000;
+}
+
+@media (max-width: @break-point-tablet) {
+  .expert__img-wrapper {
+    width: 100%;
+  }
+
+  .expert__info-wrapper {
+    margin-top: 30px;
+  }
+
+  .expert__title,
+  .expert__job {
+    text-align: center;
+  }
+
+  .expert__status {
+    align-self: center;
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .expert__img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .expert__img {
+    margin-top: 15px;
+  }
 }

@@ -43,8 +43,32 @@
 
 .doc__tags {
   margin-top: 15px;
+  align-items: center;
 }
 
 .doc__issue {
   margin-top: 50px;
+}
+
+@media (max-width: @break-point-tablet) {
+  .doc__meta {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .doc__date,
+  .doc__changed,
+  .doc__author {
+    margin: 0;
+  }
+
+  .doc__preview {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .doc__title {
+    line-height: 24px;
+  }
 }

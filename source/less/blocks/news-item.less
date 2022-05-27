@@ -97,3 +97,25 @@
 
   fill: @blue;
 }
+
+@media (max-width: @break-point-tablet) {
+  .news-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .news-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .news-item {
+    margin-top: 15px;
+  }
+
+  .news-item__info {
+    padding: 20px;
+  }
+}

@@ -50,3 +50,49 @@
   color: @blue;
   background: none;
 }
+
+@media (max-width: @break-point-4) {
+  .add-file__label {
+    margin-left: 20px;
+  }
+
+  .add-file__mark {
+    padding: 0 20px;
+  }
+
+  .add-file__button {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .add-file__button {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    font-size: 0;
+    line-height: 0;
+
+    &::after,
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      background-color: @red;
+      transform: translate(-50%, -50%);
+
+      content: '';
+    }
+
+    &::after {
+      width: 16px;
+      height: 1px;
+    }
+
+    &::before {
+      width: 1px;
+      height: 16px;
+    }
+  }
+}

@@ -10,11 +10,32 @@
   }
 }
 
-
 .sidebar__button {
   margin-top: 15px;
 
   &:first-of-type {
     margin-top: 0;
+  }
+}
+
+@media (max-width: @break-point-1) {
+  .sidebar {
+    width: 33.33%;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .sidebar {
+    width: 100%;
+    margin-top: 50px;
+
+    &--left {
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
+  }
+
+  .sidebar__tag-search {
+    margin-top: 30px;
   }
 }

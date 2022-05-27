@@ -18,6 +18,7 @@
 
 .partners__logo {
   max-width: 200px;
+  min-width: 150px;
   flex-grow: 1;
 
   &[href] {
@@ -29,5 +30,11 @@
     &:active {
       opacity: 0.6;
     }
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .partners__logotypes {
+    gap: 30px;
   }
 }

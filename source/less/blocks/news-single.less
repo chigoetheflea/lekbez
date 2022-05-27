@@ -5,7 +5,6 @@
 .news-single__meta {
   margin-top: 30px;
   padding: 15px 0;
-  // border-top: 1px solid @blue;
   border-bottom: 1px solid @blue;
 }
 
@@ -17,3 +16,30 @@
 .news-single__wrapper {
   padding-right: 75px;
 }
+
+.news-single__thumb {
+  max-width: 400px !important;
+  align-self: center;
+}
+
+@media (max-width: @break-point-2) {
+  .news-single__wrapper {
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .news-single__wrapper {
+    order: 1;
+    margin-top: 50px;
+  }
+
+  .news-single__sidebar {
+    margin-top: 0;
+  }
+
+  .news-single__meta {
+    margin-top: 15px;
+  }
+}
+

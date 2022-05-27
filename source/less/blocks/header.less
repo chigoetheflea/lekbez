@@ -33,6 +33,7 @@
 
 .header__user-links-item {
   margin-left: 20px;
+  align-items: center;
 
   &:first-child {
     margin: 0;
@@ -55,6 +56,53 @@
   &:focus {
     svg {
       fill: @red;
+    }
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .header__user-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__user-links-item {
+    margin: 8px 0 0 0;
+    margin-left: auto !important;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .header__logo {
+    height: 70px;
+    width: auto;
+
+    img {
+      height: 70px;
+      width: auto;
+    }
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .header__user-links {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .header__wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .header__logo {
+    height: 60px;
+    width: auto;
+
+    img {
+      height: 60px;
+      width: auto;
     }
   }
 }

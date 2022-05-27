@@ -23,3 +23,32 @@
 .experts__item-wrapper {
   margin-top: 75px;
 }
+
+@media (max-width: @break-point-1) {
+  .experts__item-wrapper {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .experts__item-wrapper {
+    width: 50%;
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .experts__item-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .experts__links {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .experts__category-link {
+    text-align: center;
+  }
+}

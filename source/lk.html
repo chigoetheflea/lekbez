@@ -47,7 +47,7 @@
 
           <ul class="main-menu__list">
             <li><a href="">РГ – Лекарственная безопасность</a></li>
-            <li><a href="">Форум</a></li>
+            <li><a href="" class="main-menu__current">Форум</a></li>
             <li><a href="">Общественные инициативы</a></li>
             <li><a href="">Предложения</a>
               <ul class="main-menu__list  main-menu__list--inner">
@@ -105,7 +105,11 @@
       </div>
 
       <a href="" class="header__logo  img-link">
-        <img src="./img/logo_lekbez_color.svg" alt="Лекарственная безопасность" width="204" height="60">
+        <picture>
+          <source media="(max-width: 560px)" srcset="./img/logo_lekbez_sign.svg" width="56" height="70">
+
+          <img src="./img/logo_lekbez_color.svg" alt="Лекарственная безопасность" width="204" height="60">
+        </picture>
       </a>
 
       <div class="header__user-links">
@@ -131,7 +135,7 @@
             <use xlink:href="#icon_user"></use>
           </svg>
 
-          <span class="icon-link__text">Личный кабинет</span>
+          <span class="icon-link__text">Личный<span class="icon-link__separator"><br></span>кабинет</span>
         </a>
 
         <a href="" class="icon-link  header__user-links-item  icon-link--reverse">
@@ -162,7 +166,7 @@
       <div class="box  columns-wrapper  content__wrapper  box--wide">
         <h1 class="title  content__title  title--big  title--center">Личный кабинет эксперта</h1>
 
-        <aside class="column  sidebar  content__sidebar  column--1-4">
+        <aside class="column  sidebar  content__sidebar  column--1-4  sidebar--left">
           <div class="controls  account__controls">
             <a href="" class="button  controls__button  controls__button--current">
               <div class="controls__icon">

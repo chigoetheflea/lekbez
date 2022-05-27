@@ -53,3 +53,28 @@
 
   fill: #ffffff;
 }
+
+@media (max-width: @break-point-tablet) {
+  .controls__button {
+    width: 33.33%;
+    justify-content: center;
+    margin: 0;
+
+    &--current {
+      .controls__arrow {
+        display: none;
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .controls__text {
+    .visually-hidden;
+  }
+}

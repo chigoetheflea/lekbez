@@ -47,7 +47,7 @@
 
           <ul class="main-menu__list">
             <li><a href="">РГ – Лекарственная безопасность</a></li>
-            <li><a href="">Форум</a></li>
+            <li><a href="" class="main-menu__current">Форум</a></li>
             <li><a href="">Общественные инициативы</a></li>
             <li><a href="">Предложения</a>
               <ul class="main-menu__list  main-menu__list--inner">
@@ -105,7 +105,11 @@
       </div>
 
       <a href="" class="header__logo  img-link">
-        <img src="./img/logo_lekbez_color.svg" alt="Лекарственная безопасность" width="204" height="60">
+        <picture>
+          <source media="(max-width: 560px)" srcset="./img/logo_lekbez_sign.svg" width="56" height="70">
+
+          <img src="./img/logo_lekbez_color.svg" alt="Лекарственная безопасность" width="204" height="60">
+        </picture>
       </a>
 
       <div class="header__user-links">
@@ -131,7 +135,7 @@
             <use xlink:href="#icon_user"></use>
           </svg>
 
-          <span class="icon-link__text">Личный кабинет</span>
+          <span class="icon-link__text">Личный<span class="icon-link__separator"><br></span>кабинет</span>
         </a>
 
         <a href="" class="icon-link  header__user-links-item  icon-link--reverse">
@@ -170,12 +174,12 @@
           </div>
         </div>
 
-        <article class="column  sidebar  content__sidebar  column--2-3">
-          <h1 class="title  title--big">Хвостикова Елена</h1>
+        <article class="column  expert__info-wrapper  content__column  column--2-3">
+          <h1 class="title  expert__title  title--big">Хвостикова Елена</h1>
 
           <div class="expert__job">Руководитель АНО «Центр помощи пациентам «Геном»</div>
 
-          <p class="expert__status  expert__status--approved">Эксперт</p>
+          <span class="expert__status  expert__status--approved">Эксперт</span>
 
           <div class="expert__bio">
             <p>Художественный талант, согласно традиционным представлениям, иллюстрирует неизменный хорал, подобный исследовательский подход к проблемам художественной типологии можно обнаружить у К.Фосслера. Иррациональное в творчестве продолжает резкий горизонт ожидания, именно об этом комплексе движущих сил писал З.Фрейд в теории сублимации. Маньеризм готично использует эпитет.</p>

@@ -17,3 +17,33 @@
   line-height: 28px;
 }
 
+.about__button {
+  margin-right: 15px;
+}
+
+@media (max-width: @break-point-0) {
+  .about__wrapper {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+ .about__wrapper {
+   flex-direction: column;
+ }
+
+ .about__text {
+   width: 100%;
+ }
+
+ .about__button {
+   margin: 30px  0 0 0;
+ }
+}
+
+@media (max-width: @break-point-4) {
+  .about__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
