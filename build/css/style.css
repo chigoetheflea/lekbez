@@ -2623,7 +2623,7 @@ span.flatpickr-weekday {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   gap: 30px 30px;
-  grid-template-areas: "c3 c3 c3 c3 c3 c1 c1 c1 c1 c1 c1 c1" "c3 c3 c3 c3 c3 c2 c2 c2 c2 c2 c2 c2" "c4 c4 c4 c4 c4 c2 c2 c2 c2 c2 c2 c2" "c5 c5 c5 c5 c6 c6 c6 c6 c7 c7 c7 c7";
+  grid-template-areas: "c3 c3 c3 c3 c3 c1 c1 c1 c1 c1 c1 c1" "c3 c3 c3 c3 c3 c2 c2 c2 c2 c2 c2 c2" "c4 c4 c4 c4 c4 c2 c2 c2 c2 c2 c2 c2" "c5 c5 c5 c5 c5 c5 c5 c5 c5 c5 c5 c5";
 }
 .map__item--news {
   grid-area: c3;
@@ -3164,6 +3164,9 @@ span.flatpickr-weekday {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 50px;
   margin-top: 50px;
 }
