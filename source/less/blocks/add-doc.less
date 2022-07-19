@@ -1,26 +1,39 @@
+.add-doc__button {
+  .transition(opacity);
+}
+
 .add-doc {
   margin-bottom: 15px;
 
   &--active {
     .add-doc__wrapper {
       display: block;
-      opacity: 1;
+      margin-bottom: 30px;
+      margin-top: -70px;
       pointer-events: auto;
     }
 
     .add-doc__button {
-      display: none;
       opacity: 0;
       pointer-events: none;
+    }
+  }
+
+  &--visible {
+    .add-doc__wrapper {
+      opacity: 1;
     }
   }
 }
 
 .add-doc__wrapper {
+  .transition(opacity);
+
   position: relative;
   display: none;
   opacity: 0;
   pointer-events: none;
+  transition-duration: 0.75s;
 }
 
 .add-doc__close {

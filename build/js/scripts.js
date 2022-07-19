@@ -56,6 +56,12 @@ const FORM_DATE = '.js-date-picker';
 const FORM_DATE_FORMAT = `F j, Y`;
 const FORM_MASK = `.js-masked-input`;
 
+const ADD_DOC = `.js-add-doc`;
+const ADD_DOC_BUTTON = `.js-add-doc-open`;
+const ADD_DOC_CLOSE_BUTTON = `.js-add-doc-close`;
+const ADD_DOC_ACTIVE = `add-doc--active`;
+const ADD_DOC_VISIBLE = `add-doc--visible`;
+
 const FILE = `.js-file`;
 const FILE_FIELD = `.js-file-field`;
 const FILE_MARK = `.js-file-mark`;
@@ -672,22 +678,42 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
   /* add file form */
 
-  const addFileWrapper = document.querySelector(`.js-add-doc`);
+  const addFileWrapper = document.querySelector(ADD_DOC);
 
-  const toggleAddFileWrapper = () => {
-    addFileWrapper.classList.toggle(`add-doc--active`);
+  const closeAddFileBox = () => {
+    addFileWrapper.classList.remove(ADD_DOC_VISIBLE);
+
+    setTimeout(() => {
+      addFileWrapper.classList.remove(ADD_DOC_ACTIVE);
+    }, 250);
+
+    const addFileButtonClose = addFileWrapper.querySelector(ADD_DOC_CLOSE_BUTTON);
+    addFileButtonClose.removeEventListener(`click`, handleCloseFileButtonClick);
+  };
+
+  const handleCloseFileButtonClick = () => {
+    closeAddFileBox();
+  };
+
+  const openAddFileBox = () => {
+    addFileWrapper.classList.add(ADD_DOC_ACTIVE);
+
+    setTimeout(() => {
+      addFileWrapper.classList.add(ADD_DOC_VISIBLE);
+    }, 200);
+
+    const addFileButtonClose = addFileWrapper.querySelector(ADD_DOC_CLOSE_BUTTON);
+    addFileButtonClose.addEventListener(`click`, handleCloseFileButtonClick);
   };
 
   const handleAddFileButtonClick = () => {
-    toggleAddFileWrapper();
+    openAddFileBox();
   };
 
   if (addFileWrapper) {
-    const addFileButton = addFileWrapper.querySelector(`.js-add-doc-open`);
-    const addFileButtonClose = addFileWrapper.querySelector(`.js-add-doc-close`);
+    const addFileButton = addFileWrapper.querySelector(ADD_DOC_BUTTON);
 
     addFileButton.addEventListener(`click`, handleAddFileButtonClick);
-    addFileButtonClose.addEventListener(`click`, handleAddFileButtonClick);
   }
 
   /* add file form */
