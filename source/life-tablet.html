@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Montserrat-ExtraBold.woff2" as="font">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <meta property="og:description" content="Лекарственная безопасность">
+  <meta property="og:image" content="img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Лекарственная безопасность">
+  <meta name="twitter:description" content="Лекарственная безопасность">
+  <meta name="twitter:image:src" content="img/og.jpg">
+  <meta name="description" content="Лекарственная безопасность">
+  <meta name="keywords" content="Лекарственная безопасность">
+  <title>Лекарственная безопасность</title>
+</head>
+<body class="no-js  site  site--inner">
+
+  <div style="display:none;">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+  <div class="loading  js-loading"><span class="loading__spinner"></span></div>
+
+  <header class="header  site__header">
+    <div class="main-menu  header__menu  js-menu">
+      <div class="main-menu__wrapper">
+        <button class="close-button  main-menu__close  js-menu-close">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_close"></use>
+          </svg>
+
+          <span>Закрыть</span>
+        </button>
+
+        <nav class="main-menu__navigation">
+          <div class="main-menu__user-controls">
+            <!-- <a href="https://lekbez.ru/auth" class="button  button--regular">Вход</a>
+
+            <a href="https://lekbez.ru/registration" class="button  button--regular">Регистрация</a> -->
+          </div>
+
+          <ul class="main-menu__list">
+            <li><a href="https://rg.ru/pharmprobeg" target="_blank">РГ – Лекарственная безопасность</a></li>
+            <li><a href="https://pharmforum.org/" target="_blank">Форум</a></li>
+            <!-- <li><a href="https://lekbez.ru/inner-oi">Общественные инициативы</a></li>
+            <li><a href="https://lekbez.ru/inner-oi">Предложения</a> -->
+              <!--
+              <ul class="main-menu__list  main-menu__list--inner">
+                <li><a href="">РГ – Лекарственная безопасность</a></li>
+                <li><a href="">Форум</a></li>
+              </ul>
+            </li>-->
+            <li><a href="https://lekbez.ru/wip">Экспертный состав</a></li>
+            <li><a href="https://lekbez.ru/monitoring">Мониторинг</a></li>
+            <li><a href="https://pharmprobeg.ru/events/" target="_blank">События и спецпроекты</a></li>
+            <li><a href="https://lekbez.ru/news-item">Новости</a></li>
+            <li><a href="https://pharmprobeg.ru/smi/" target="_blank">Сми о нас</a></li>
+            <li><a href="https://pharmprobeg.ru/kontakty/" target="_blank">Контакты</a></li>
+          </ul>
+
+          <!-- <a href="" class="main-menu__subscribe">Подписаться на рассылку</a> -->
+
+          <!-- <form action="" class="form  main-menu__langs  js-menu-lang-form">
+            <p class="form__label  main-menu__langs-label">Выберите язык</p>
+
+            <div class="like-select  form__like-select  like-select--above  js-select">
+              <button class="button  like-select__button  button--regular  js-select-button" data-default="Русский">
+                <span>Русский</span>
+
+                <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon_arrow_thin_circle"></use>
+                </svg>
+              </button>
+
+              <ul class="like-select__list  js-select-list">
+                <li><a href="" class="like-select__current">Русский</a></li>
+                <li><a href="">Английский</a></li>
+              </ul>
+
+              <input type="text" name="current_lang" id="current_lang_field" class="visually-hidden  js-select-input" value="Русский">
+            </div>
+          </form> -->
+        </nav>
+      </div>
+    </div>
+
+    <div class="box  header__wrapper">
+      <div class="header__controls">
+        <button class="menu-button  header__menu-button  js-menu-button">
+          <div class="menu-button__burger"></div>
+
+          <span class="menu-button__text">Меню</span>
+        </button>
+
+        <a href="https://lekbez.ru/search.html" class="header__search-button  js-modal-button" data-target="#modal_search">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_search"></use>
+          </svg>
+        </a>
+      </div>
+
+      <a href="https://lekbez.ru/" class="header__logo  img-link">
+        <picture>
+          <source media="(max-width: 560px)" srcset="./img/logo_lekbez_sign.svg" width="56" height="70">
+
+          <img src="./img/logo_lekbez_color.svg" alt="Лекарственная безопасность" width="204" height="60">
+        </picture>
+      </a>
+
+      <div class="header__user-links">
+        <!-- <a href="https://lekbez.ru/auth" class="icon-link  header__user-links-item">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_arrow"></use>
+          </svg>
+
+          <span class="icon-link__text">Вход</span>
+        </a>
+
+        <a href="https://lekbez.ru/registration" class="icon-link  header__user-links-item">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_plus"></use>
+          </svg>
+
+          <span class="icon-link__text">Регистрация</span>
+        </a> -->
+
+        <!---
+        <a href="" class="icon-link  header__user-links-item">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_user"></use>
+          </svg>
+
+          <span class="icon-link__text">Личный<span class="icon-link__separator"><br></span>кабинет</span>
+        </a>
+
+        <a href="" class="icon-link  header__user-links-item  icon-link--reverse">
+          <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon_arrow"></use>
+          </svg>
+
+          <span class="icon-link__text">Выход</span>
+        </a>
+        --->
+
+      </div>
+    </div>
+  </header>
+
+  <main class="site-content  site__content">
+    <div class="breadcrumbs">
+      <div class="box  breadcrumbs__wrapper">
+        <a href="https://lekbez.ru/" class="breadcrumbs__link">Главная</a>
+
+        <span class="breadcrumbs__separator">/</span>
+
+        <a href="https://lekbez.ru/news" class="breadcrumbs__link">Новости</a>
+
+        <span class="breadcrumbs__separator">/</span>
+
+        <span class="breadcrumbs__current">В чьих руках находится сердце?</span>
+      </div>
+    </div>
+
+    <section class="news-single  content">
+      <div class="box  columns-wrapper  content__wrapper  box--wide">
+        <article class="column  news-single__wrapper  content__column  column--3-4  column--vertical">
+          <h1 class="title  news-single__title  title--big">Таблетка для жизни</h1>
+
+          <div class="news-single__meta">
+            <time class="news-single__date" datetime="">29 декабря 2022</time>
+          </div>
+
+          <div class="news-single__content">
+            <p>Борьба с сердечно-сосудистыми заболеваниями стала одной из главных тем спецпроекта РГ «Лекарственная безопасность». Во многих регионах страны в этом году прошли мероприятия, посвященные резервам соответствующей федеральной программы. К каким выводам пришли эксперты сферы здравоохранения, какими должны быть следующие шаги по борьбе с болезнями системы кровообращения?</p>
+
+            <p>Один из ключевых целевых показателей федерального проекта «Борьба с сердечно-сосудистыми заболеваниями» - это смертность от болезней системы кровообращения. К 2024 году согласно паспорту федерального проекта она должна составить 450 человек на 100 тысяч населения. По данным Росстата на 2021 год, этот показатель составляет около 640 человек на 100 тысяч населения. Важно понимать, что за сухой медицинской статистикой всегда кроются человеческие истории: это чьи-то отцы, мужья, матери и жены, любимые бабушки и дедушки. </p>
+
+            <p>Результаты достигаются благодаря комплексной работе. Здесь и профилактика, и просвещение, и повышение информированности граждан, и оснащение больниц, и обучение специалистов, и льготное лекарственное обеспечение пациентов. </>
+
+            <p>Когда человек переносит острое заболевание – инфаркт, инсульт – то после выписки из стационара он сразу же встает на учет и продолжает лечиться амбулаторно: в течение двух лет ему положены бесплатные препараты, необходимые для полноценной терапии. И если он будет неукоснительно следовать предписаниям врачей, это значительно снижает риск повторного сердечно-сосудистого события. Как сообщил заместитель министра здравоохранения Евгений Камкин в ходе заседания коллегии по борьбе с сердечно-сосудистыми заболеваниями в мае 2022 года, в 2020 году бесплатные препараты по льготной федеральной программе получили 450 тысяч россиян, в 2021 году – уже более 612 тысяч пациентов. </p>
+
+            <p>Здесь нужно сделать небольшое отступление на тему приверженности терапии. Среди пациентов зачастую бытует мнение, что выписанные лекарства нужны для того, чтобы хорошо себя чувствовать. Поэтому, если человек ощущает себя относительно здоровым, то приходит к выводу, что опасность миновала, а значит «глотать таблетки» смысла нет. В результате он вновь попадает в больницу. </>
+
+            <p>
+              Важную роль играет просветительская работа. Эту задачу решает, например, информационный проект «ЧтобыЖитьДолго», реализованный Всероссийским союзом. пациентов. Эксперты говорят, что крайне важна и социальная реклама на тему сердечно-сосудистых заболеваний, и грамотные публикации в СМИ. В общем, чтобы достучаться до каждого пациента, нужно бить во все колокола.
+              Еще один аспект приверженности терапии – это доступность лекарств. Наталья Бабкова, руководитель направления по сердечно-сосудистым заболеваниям Всероссийского Союза Пациентов, на открытом научно-практическом совещании в Подмосковье рассказала о социологическом исследовании, посвященном основным проблемам терапии ССЗ на территории РФ в 2022 году. Один из вопросов касался причин прерывания терапии. Большая часть респондентов ответили, что возможности покупать лекарства за свои деньги у них не было. Второй по популярности ответ – в аптеке не было лекарства в наличии, лечение пришлось прекратить из-за перебоев. «Задача пересмотра федерального перечня льготных препаратов для терапии ССЗ стоит достаточно остро», - уверена Наталья Бабкова.
+            </p>
+
+            <p><strong>Льготная программа для хронических больных</strong></p>
+
+            <p>Специалисты уверены: одно из самых опасных заболеваний – это хроническая сердечная недостаточность (ХСН): каждую минуту в России умирает один пациент с этим диагнозом. ХСН фигурирует в диагнозах 92 процентов пациентов, госпитализированных в отделения кардиологии. </p>
+
+            <p class="content__quote">Сердечная недостаточность — это конечный этап практически любого заболевания сердечно-сосудистой системы. Наличие сердечной недостаточности значительно сокращает продолжительность жизни людей, резко ухудшает качество их жизни, ложится тяжким бременем на систему здравоохранения из-за частых повторных госпитализаций, - говорит главный внештатный кардиолог Минздрава Московской области Мария Глезер.</>
+
+            <p>В сентябре этого года Минздрав дополнил список льготных лекарств восемью международными непатентованными названиями препаратов, предназначенных для терапии ХСН. По словам Марии Глезер, новые препараты, включенных в список для льготного обеспечения, закрывают весь необходимый перечень рекомендованных средств для лечения сердечной недостаточности.</p>
+
+            <p>Однако льготное лекарственное обеспечение и в этом случае привязано к перенесенному инфаркту или инсульту. То есть пациент, у которого есть ХСН, получит инновационную и эффективную терапию за счет государства только при условии попадания в стационар с острым состоянием, в то время как для пациентов с хроническими сердечно-сосудистыми заболеваниями крайне важна профилактика острых сердечно-сосудистых событий и необходимо пожизненное лечение вне зависимости от перенесенного инфаркта или инсульта. И, если говорить о потребности в дальнейшем расширении льготного лекарственного обеспечения, то оно необходимо для прежде всего для пациентов с хроническими сердечно-сосудистыми заболеваниями.</p>
+
+            <p>В контексте хронической сердечной недостаточности есть и другие проблемы: это отсутствие регистра пациентов, нехватка единых стандартов оказания медицинской помощи, отсутствие достоверной статистики по ХСН, поскольку она не кодируется как отдельное заболевание. </p>
+
+            <p>В некоторых регионах России уже рассматриваются программы льготного лекарственного обеспечения пациентов с ХСН. В этом году в ряде субъектов прошли научно-практические совещания, посвященные этой проблеме, и власти на местах задумались о том, как эти задачи решать. Соответствующие программы обсуждаются, например, в Санкт-Петербурге и в Нижегородской области.</p>
+
+            <p><strong>Между тем</strong></p>
+
+            <p>В рамках научно-практического совещания в Подмосковье, посвященного борьбе с ССЗ, директор Центра социальной экономики Руслан Древаль рассказал о социально-экономической значимости расширения доступности лекарственных препаратов для пациентов с ССЗ. «В России свыше 5 миллионов человек страдает болезнями системы кровообращения. Смертность от них в РФ превышает 43,9 процента, а смертность от хронической сердечной недостаточности (ХСН) достигает 39 процентов», — подчеркнул он. По его словам, любое заболевание ставит перед бюджетом задачу по выделению финансирования. Помимо затрат на непосредственное лечение вклад в экономическое бремя вносит частота госпитализаций. ХСН сопровождается частыми госпитализациями: до 4 процентов от общего числа госпитализаций в развитых странах. Тренд на расширение применения современных препаратов увеличит продолжительность жизни пациентов и снизит частоту госпитализаций, и как следствие – уменьшит бюджетные расходы.</p>
+          </div>
+        </article>
+
+        <aside class="column  sidebar  news-single__sidebar  content__sidebar  column--1-4">
+          <img src="./img/pic_news_02.jpg" alt="" class="news-single__thumb">
+
+          <div class="tags  news-single__tags">
+            <p class="tags__title">Метки</p>
+
+            <div class="tags__list">
+              <a class="">ССЗ</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- <section class="news  content  news--related">
+      <div class="box  content__wrapper">
+        <h2 class="title  content__title  title--big  title--center">Другие новости</h2>
+
+        <div class="columns-wrapper  news__wrapper">
+          <a href="" class="news-item  column  column--1-3">
+            <article class="news-item__wrapper  news__item">
+              <div class="news-item__thumb">
+                <img src="./img/pic_news.jpg" alt="">
+              </div>
+
+              <div class="news-item__info">
+                <time datetime="" class="news-item__date">26 марта 2022</time>
+
+                <h2 class="title  news-item__title">
+                  Александр Петров: большая дорога начинается с первого шага
+                </h2>
+
+                <svg width="20px" height="20px" aria-hidden="true" focusable="false" class="news-item__arrow">
+                  <use xlink:href="#icon_arrow_thin_circle"></use>
+                </svg>
+              </div>
+            </article>
+          </a>
+
+          <a href="" class="news-item  column  column--1-3">
+            <article class="news-item__wrapper  news__item">
+              <div class="news-item__thumb">
+                <img src="./img/pic_news.jpg" alt="">
+              </div>
+
+              <div class="news-item__info">
+                <time datetime="" class="news-item__date">26 марта 2022</time>
+
+                <h2 class="title  news-item__title">
+                  Александр Петров: большая дорога начинается с первого шага
+                </h2>
+
+                <svg width="20px" height="20px" aria-hidden="true" focusable="false" class="news-item__arrow">
+                  <use xlink:href="#icon_arrow_thin_circle"></use>
+                </svg>
+              </div>
+            </article>
+          </a>
+
+          <a href="" class="news-item  column  column--1-3">
+            <article class="news-item__wrapper  news__item">
+              <div class="news-item__thumb">
+                <img src="./img/pic_news.jpg" alt="">
+              </div>
+
+              <div class="news-item__info">
+                <time datetime="" class="news-item__date">26 марта 2022</time>
+
+                <h2 class="title  news-item__title">
+                  Александр Петров: большая дорога начинается с первого шага
+                </h2>
+
+                <svg width="20px" height="20px" aria-hidden="true" focusable="false" class="news-item__arrow">
+                  <use xlink:href="#icon_arrow_thin_circle"></use>
+                </svg>
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+  <footer class="footer  site__footer">
+    <div class="box  footer__wrapper  columns-wrapper  box--wide">
+      <div class="column  footer__column  column--1-3  footer__column--left">
+        <p class="footer__column-title">Главное</p>
+
+        <nav class="footer__menu">
+          <ul>
+            <li><a href="https://rg.ru/pharmprobeg" target="_blank">РГ – Лекарственная безопасность</a></li>
+            <li><a href="https://pharmforum.org/" target="_blank">Форум</a></li>
+            <!-- <li><a href="https://lekbez.ru/inner-oi">Общественные инициативы</a></li> -->
+            <!-- <li><a href="https://lekbez.ru/inner-oi">Предложения</a></li> -->
+            <li><a href="https://lekbez.ru/wip">Экспертный состав</a></li>
+            <li><a href="https://lekbez.ru/monitoring">Мониторинг</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column  footer__column  column--1-3  footer__column--center">
+        <p class="footer__column-title">Лекбез</p>
+
+        <nav class="footer__menu">
+          <ul>
+            <li><a href="https://pharmprobeg.ru/events/" target="_blank">События и спецпроекты</a></li>
+            <li><a href="https://lekbez.ru/news-item">Новости</a></li>
+            <li><a href="https://pharmprobeg.ru/smi/" target="_blank">Сми о нас</a></li>
+            <li><a href="https://pharmprobeg.ru/kontakty/" target="_blank">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column  footer__column  column--1-3  footer__column--right">
+        <a href="https://lekbez.ru/" class="footer__logo  img-link">
+          <img src="./img/logo_lekbez_white.svg" alt="Лекарственная безопасность" width="204" height="60">
+        </a>
+
+        <!-- <div class="footer__subscribe">
+          <form action="" class="form  footer__form" id="subscribe_form">
+            <label for="" class="form__label  footer__label" >Подпишитесь на рассылку</label>
+
+            <input type="email" class="form__input  form__input--small" name="subscribe_email" id="subscribe_email_field" placeholder="email@domain.ru">
+
+            <button type="submit" aria-label="Отправить" class="form__small-submit">
+              <svg width="16px" height="16px" aria-hidden="true" focusable="false">
+                <use xlink:href="#icon_arrow_thin"></use>
+              </svg>
+            </button>
+          </form>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      2022 © ЛекБез
+    </div>
+  </footer>
+
+  <section class="modal  js-modal" id="modal_search">
+    <button class="close-button  modal__close  js-modal-close">
+      <svg width="20px" height="20px" aria-hidden="true" focusable="false">
+        <use xlink:href="#icon_close"></use>
+      </svg>
+
+      <span>Закрыть</span>
+    </button>
+
+    <div class="modal__body  modal__body--center">
+      <h2 class="title  modal__title">
+        Поиск по сайту
+      </h2>
+
+      <div class="modal__content">
+        <form action="" class="form  modal__form  js-search-form">
+          <input type="text" class="form__input" name="search" id="search_field" placeholder="Что вы хотите найти?">
+
+          <button type="submit" class="button  form__submit  button--regular">Найти!</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/peppermint.min.js"></script>
+  <script src="js/flatpickr.min.js"></script>
+  <script src="js/inputmask.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+</body>
+</html>
